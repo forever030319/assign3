@@ -47,8 +47,8 @@ void setup () {
   flighter_x=580;
   flighter_y=240;
 
-  treasure_x = floor(random(width-treasure_width/2));
-  treasure_y = floor(random(height-treasure_height/2));
+  treasure_x = floor(random(width-treasure_width));
+  treasure_y = floor(random(height-treasure_height));
   
   enermy_x = 0;
   enermy_y = floor(random(height-enermy_height));
@@ -92,6 +92,8 @@ background(0); // clear scene
       image(hpImg,0,0);
       
       image(fighterImg,flighter_x,flighter_y);
+      
+      
       image(treasureImg,treasure_x,treasure_y);
       
     
