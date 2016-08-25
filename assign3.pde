@@ -100,6 +100,9 @@ background(0); // clear scene
       //enermy
       switch(enermy_count%3){
         case 0:
+          if(enermy_x == 0 && enermy_count%3==0){
+            enermy_x = -5*enermy_width;
+          }
           for(int i=0;i<5;i++){
             int x = i*enermy_width;
             image(enermyImg,enermy_x+x,enermy_y);
@@ -107,6 +110,9 @@ background(0); // clear scene
           break;
         
         case 1:
+          if(enermy_x == 0 && enermy_count%3==1){
+            enermy_x = -5*enermy_width;
+          }
           while(enermy_y < enermy_height*4){
             enermy_y = enermy_height*4 +  floor(random(height-enermy_height - enermy_height*4));
           }
@@ -119,6 +125,9 @@ background(0); // clear scene
           break;
         
         case 2:
+          if(enermy_x == 0 && enermy_count%3==2){
+            enermy_x = -3*enermy_width;
+          }
           while(enermy_y < enermy_height*2 || enermy_y > height-enermy_height*3){
             enermy_y = enermy_height*2 +  floor(random(height-enermy_height*3 - enermy_height*2));  
           }
