@@ -84,12 +84,7 @@ background(0); // clear scene
       image(bg1,bg1_x,0); 
       image(bg2,bg2_x,0);
       
-      //HP
-      hp = (x_flood/100)*hp_initial;
-      stroke(0);
-      fill(255,0,0);
-      rect(5,4,hp,20);
-      image(hpImg,0,0);
+     
       
       image(fighterImg,flighter_x,flighter_y);
       
@@ -125,12 +120,15 @@ background(0); // clear scene
           break;
         
         case 2:
+         
           if(enermy_x == 0 && enermy_count%3==2){
-            enermy_x = -3*enermy_width;
+            enermy_x = -4*enermy_width;
           }
           while(enermy_y < enermy_height*2 || enermy_y > height-enermy_height*3){
             enermy_y = enermy_height*2 +  floor(random(height-enermy_height*3 - enermy_height*2));  
           }
+
+          
           for(int i=0;i<3;i++){
              for(int j=0;j<3;j++){
                x = j*enermy_width;
@@ -149,11 +147,18 @@ background(0); // clear scene
         break;
       }
   
-
+       //HP
+      hp = (x_flood/100)*hp_initial;
+      stroke(0);
+      fill(255,0,0);
+      rect(5,4,hp,20);
+      image(hpImg,0,0);
+      
       enermy_x = enermy_x +3;
       if(enermy_x>=640){
         enermy_count++;
         enermy_y = floor(random(height-enermy_height));
+        enermy_x = 0;
       }
       enermy_x %= 640;
   
